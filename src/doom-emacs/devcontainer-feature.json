@@ -11,9 +11,5 @@
       "type": "string"
     }
   },
-  "installsAfter": [
-    "ghcr.io/devcontainers-contrib/features/homebrew-package",
-    "ghcr.io/devcontainers-contrib/features/gh-release",
-    "ghcr.io/devcontainers-contrib/features/gh-cli"
-  ]
+  "installsAfter": ["ghcr.io/devcontainers-contrib/features/homebrew-package"]
 }
