@@ -1,0 +1,19 @@
+{
+  "id": "doom-emacs",
+  "version": "0.0.1",
+  "name": "Doom Emacs",
+  "description": "Doom Emacs configuration",
+  "options": {
+    "version": {
+      "default": "latest",
+      "description": "Select the version to install.",
+      "proposals": ["latest"],
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers-contrib/features/homebrew-package",
+    "ghcr.io/devcontainers-contrib/features/gh-release",
+    "ghcr.io/devcontainers-contrib/features/gh-cli"
+  ]
+}
