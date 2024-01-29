@@ -18,9 +18,11 @@ source dev-container-features-test-lib
 
 echo -e "The result of the 'doom-emacs' command will be:\n"
 
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin:~/.emacs.d/bin
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 emacs --version
-doom doctor
+id -p
+ls -la /home
+/home/vscode/.emacs.d/bin/doom doctor
 
 echo -e "\n"
 
