@@ -24,6 +24,8 @@ $nanolayer_location \
     "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.7" \
     --option package='git'
 
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
+
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 
