@@ -27,6 +27,6 @@ $nanolayer_location \
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
+~/.config/emacs/bin/doom install --force
 
 echo 'Done!'
