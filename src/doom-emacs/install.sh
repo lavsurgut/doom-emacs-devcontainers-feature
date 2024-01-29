@@ -18,6 +18,12 @@ $nanolayer_location \
     "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.7" \
     --option package='emacs'
 
+$nanolayer_location \
+    install \
+    devcontainer-feature \
+    "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23" \
+    --option repo='cli/cli' --option binaryNames='gh' --option version="latest"
+
 gh repo clone doomemacs/doomemacs ~/.config/emacs -- --depth 1
 ~/.config/emacs/bin/doom install
 
