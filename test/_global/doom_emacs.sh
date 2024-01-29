@@ -17,7 +17,10 @@ set -e
 source dev-container-features-test-lib
 
 echo -e "The result of the 'doom-emacs' command will be:\n"
+
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 emacs --version
+
 echo -e "\n"
 
 # Feature-specific tests
