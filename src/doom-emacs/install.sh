@@ -29,7 +29,7 @@ $nanolayer_location \
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
 git clone --depth 1 https://github.com/doomemacs/doomemacs ${DOOM_EMACS_USER_HOME}/.config/emacs
-${DOOM_EMACS_USER_HOME}/.config/emacs/bin/doom install --force --emacs-dir ${DOOM_EMACS_USER_HOME}/.config/emacs --doom-dir ${DOOM_EMACS_USER_HOME}/.config/doom 
+${DOOM_EMACS_USER_HOME}/.config/emacs/bin/doom --emacsdir ${DOOM_EMACS_USER_HOME}/.config/emacs --doomdir ${DOOM_EMACS_USER_HOME}/.config/doom install --force 
 
 chown -R ${DOOM_EMACS_USER}:${DOOM_EMACS_USER} ${DOOM_EMACS_USER_HOME}/.config/emacs ${DOOM_EMACS_USER_HOME}/.config/doom
 
