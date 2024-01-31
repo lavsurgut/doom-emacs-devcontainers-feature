@@ -11,6 +11,8 @@ source ./library_scripts.sh
 # of the script
 ensure_nanolayer nanolayer_location "v0.4.39"
 
+DOOM_EMACS_USER="${DOOM_EMACS_USER:-"vscode"}"
+DOOM_EMACS_USER_HOME="${DOOM_EMACS_USER_HOME:-"/home/vscode"}"
 
 $nanolayer_location \
     install \
@@ -26,7 +28,9 @@ $nanolayer_location \
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install --force
+git clone --depth 1 https://github.com/doomemacs/doomemacs ${DOOM_EMACS_USER_HOME}/.config/emacs
+${DOOM_EMACS_USER_HOME}/.config/emacs/bin/doom install --force --emacs-dir ${DOOM_EMACS_USER_HOME}/.config/emacs --doom-dir ${DOOM_EMACS_USER_HOME}/.config/doom 
+
+chown -R ${DOOM_EMACS_USER}:${DOOM_EMACS_USER} ${DOOM_EMACS_USER_HOME}/.config/emacs ${DOOM_EMACS_USER_HOME}/.config/doom
 
 echo 'Done!'
