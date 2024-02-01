@@ -19,12 +19,6 @@ $nanolayer_location \
     "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.7" \
     --option package='emacs'
 
-$nanolayer_location \
-    install \
-    devcontainer-feature \
-    "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.7" \
-    --option package='git'
-
 su - "$_REMOTE_USER" <<EOF
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
