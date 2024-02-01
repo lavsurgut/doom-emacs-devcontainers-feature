@@ -11,9 +11,6 @@ source ./library_scripts.sh
 # of the script
 ensure_nanolayer nanolayer_location "v0.4.39"
 
-DOOM_EMACS_USER="${DOOM_EMACS_USER:-"vscode"}"
-DOOM_EMACS_USER_HOME="${DOOM_EMACS_USER_HOME:-"/home/vscode"}"
-
 $nanolayer_location \
     install \
     devcontainer-feature \
@@ -28,10 +25,9 @@ $nanolayer_location \
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
-git clone --depth 1 https://github.com/doomemacs/doomemacs ${DOOM_EMACS_USER_HOME}/.config/emacs
-mkdir -p ${DOOM_EMACS_USER_HOME}/.config/doom
-${DOOM_EMACS_USER_HOME}/.config/emacs/bin/doom --doomdir ${DOOM_EMACS_USER_HOME}/.config/doom install --force 
+git clone --depth 1 https://github.com/doomemacs/doomemacs ${_REMOTE_USER_HOME}/.emacs.d
+${_REMOTE_USER_HOME}/.emacs.d/bin/doom --doomdir ${_REMOTE_USER_HOME}/.doom.d install --force 
 
-chown -R ${DOOM_EMACS_USER}:${DOOM_EMACS_USER} ${DOOM_EMACS_USER_HOME}/.config/emacs ${DOOM_EMACS_USER_HOME}/.config/doom
+chown -R ${_REMOTE_USER}:${_REMOTE_USER} ${_REMOTE_USER_HOME}/.emacs.d ${_REMOTE_USER_HOME}/.doom.d
 
 echo 'Done!'
