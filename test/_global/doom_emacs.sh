@@ -13,6 +13,8 @@
 
 set -e
 
+_REMOTE_USER_HOME="${_REMOTE_USER_HOME:-"/home/vscode"}"
+
 # Optional: Import test library bundled with the devcontainer CLI
 source dev-container-features-test-lib
 
@@ -20,7 +22,7 @@ echo -e "The result of the 'doom-emacs' command will be:\n"
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 emacs --version
-ls -la ${_REMOTE_USER_HOME}/.doom.d/
+ls -la ${_REMOTE_USER_HOME}/.doom.d
 ${_REMOTE_USER_HOME}/.emacs.d/bin/doom doctor
 
 echo -e "\n"
