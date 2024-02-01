@@ -20,6 +20,8 @@ echo -e "The result of the 'doom-emacs' command will be:\n"
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 emacs --version
+ls -la ${_REMOTE_USER_HOME}/.doom.d/
+${_REMOTE_USER_HOME}/.emacs.d/bin/doom doctor
 
 echo -e "\n"
 
