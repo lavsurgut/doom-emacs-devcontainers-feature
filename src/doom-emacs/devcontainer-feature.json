@@ -14,7 +14,7 @@
       "default": "latest",
       "description": "Get a Doom Emacs config files from a git web url.",
       "type": "string"
-    },
+    }
   },
   "installsAfter": ["ghcr.io/devcontainers-contrib/features/homebrew-package"]
 }
