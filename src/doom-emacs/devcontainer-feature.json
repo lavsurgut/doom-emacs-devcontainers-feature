@@ -11,7 +11,7 @@
       "type": "string"
     },
      "sync_config_from_git_web_url": {
-      "default": "latest",
+      "default": "",
       "description": "Get a Doom Emacs config files from a git web url.",
       "type": "string"
     }
