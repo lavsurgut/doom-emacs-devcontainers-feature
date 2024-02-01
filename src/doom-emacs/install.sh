@@ -30,10 +30,11 @@ su - "$_REMOTE_USER" <<EOF
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+mkdir ~/.doom.d
 if [ ! -z "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ]; then
     git clone "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ~/.doom.d
 fi
-~/.emacs.d/bin/doom --doomdir ~/.doom.d install --force 
+~/.emacs.d/bin/doom --doomdir ~/.doom.d install --fonts --force
 
 EOF
 
