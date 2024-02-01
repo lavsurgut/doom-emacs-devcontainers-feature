@@ -30,11 +30,14 @@ export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 git clone --depth 1 https://github.com/doomemacs/doomemacs ${_REMOTE_USER_HOME}/.emacs.d
 mkdir ${_REMOTE_USER_HOME}/.doom.d
 ${_REMOTE_USER_HOME}/.emacs.d/bin/doom --doomdir ${_REMOTE_USER_HOME}/.doom.d install --force 
-chown -R ${_REMOTE_USER}:${_REMOTE_USER} ${_REMOTE_USER_HOME}/.emacs.d ${_REMOTE_USER_HOME}/.doom.d
 
 if [ ! -z "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ]; then
     git clone "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ${_REMOTE_USER_HOME}/.doom.d
     ${_REMOTE_USER_HOME}/.emacs.d/bin/doom sync
 fi
+
+chown -R ${_REMOTE_USER}:${_REMOTE_USER} ${_REMOTE_USER_HOME}/.emacs.d ${_REMOTE_USER_HOME}/.doom.d
+
+
 
 echo 'Done!'
