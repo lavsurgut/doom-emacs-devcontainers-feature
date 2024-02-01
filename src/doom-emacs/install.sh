@@ -11,6 +11,8 @@ source ./library_scripts.sh
 # of the script
 ensure_nanolayer nanolayer_location "v0.4.39"
 
+SYNC_CONFIG_FROM_GIT_WEB_URL="${SYNC_CONFIG_FROM_GIT_WEB_URL:-""}"
+
 $nanolayer_location \
     install \
     devcontainer-feature \
@@ -29,5 +31,10 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ${_REMOTE_USER_HOME}/
 mkdir ${_REMOTE_USER_HOME}/.doom.d
 ${_REMOTE_USER_HOME}/.emacs.d/bin/doom --doomdir ${_REMOTE_USER_HOME}/.doom.d install --force 
 chown -R ${_REMOTE_USER}:${_REMOTE_USER} ${_REMOTE_USER_HOME}/.emacs.d ${_REMOTE_USER_HOME}/.doom.d
+
+if [ ! -z "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ]; then
+    git clone "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ${_REMOTE_USER_HOME}/.doom.d
+    ${_REMOTE_USER_HOME}/.emacs.d/bin/doom sync
+fi
 
 echo 'Done!'
