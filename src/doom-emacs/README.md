@@ -16,7 +16,7 @@ Doom Emacs configuration
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select the version to install. | string | latest |
-| sync_config_from_git_web_url | Get a Doom Emacs config files from a git web url. | string | latest |
+| sync_config_from_git_web_url | Get a Doom Emacs config files from a git web url. | string | - |
 
 
 
