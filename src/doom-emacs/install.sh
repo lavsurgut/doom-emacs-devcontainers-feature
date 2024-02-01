@@ -26,6 +26,7 @@ $nanolayer_location \
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
 git clone --depth 1 https://github.com/doomemacs/doomemacs ${_REMOTE_USER_HOME}/.emacs.d
+mkdir ${_REMOTE_USER_HOME}/.doom.d
 ${_REMOTE_USER_HOME}/.emacs.d/bin/doom --doomdir ${_REMOTE_USER_HOME}/.doom.d install --force 
 chown -R ${_REMOTE_USER}:${_REMOTE_USER} ${_REMOTE_USER_HOME}/.emacs.d ${_REMOTE_USER_HOME}/.doom.d
 
