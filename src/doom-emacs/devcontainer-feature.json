@@ -16,5 +16,6 @@
       "type": "string"
     }
   },
-  "installsAfter": ["ghcr.io/devcontainers-contrib/features/homebrew-package"]
+  "dependsOn": {"ghcr.io/devcontainers-contrib/features/homebrew-package:1": {},
+                "ghcr.io/devcontainers/features/git:1": {}}
 }
