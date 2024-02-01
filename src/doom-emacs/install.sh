@@ -25,19 +25,16 @@ $nanolayer_location \
     "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.7" \
     --option package='git'
 
+su - "$_REMOTE_USER" <<EOF
+
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
 
-git clone --depth 1 https://github.com/doomemacs/doomemacs ${_REMOTE_USER_HOME}/.emacs.d
-mkdir ${_REMOTE_USER_HOME}/.doom.d
-${_REMOTE_USER_HOME}/.emacs.d/bin/doom --doomdir ${_REMOTE_USER_HOME}/.doom.d install --force 
-
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 if [ ! -z "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ]; then
-    git clone "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ${_REMOTE_USER_HOME}/.doom.d
-    ${_REMOTE_USER_HOME}/.emacs.d/bin/doom sync
+    git clone "${SYNC_CONFIG_FROM_GIT_WEB_URL}" ~/.doom.d
 fi
+~/.emacs.d/bin/doom --doomdir ~/.doom.d install --force 
 
-chown -R ${_REMOTE_USER}:${_REMOTE_USER} ${_REMOTE_USER_HOME}/.emacs.d ${_REMOTE_USER_HOME}/.doom.d
-
-
+EOF
 
 echo 'Done!'
