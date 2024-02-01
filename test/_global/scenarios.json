@@ -4,7 +4,8 @@
     "features": {
       "doom-emacs": {
         "version": "latest"
-      }
+      },
+      "sync_config_from_git_web_url": "https://github.com/lavsurgut/my-doom-emacs-setup"
     }
   }
 }
