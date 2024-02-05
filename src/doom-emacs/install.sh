@@ -13,12 +13,6 @@ ensure_nanolayer nanolayer_location "v0.4.39"
 
 SYNC_CONFIG_FROM_GIT_WEB_URL="${SYNC_CONFIG_FROM_GIT_WEB_URL:-""}"
 
-$nanolayer_location \
-    install \
-    devcontainer-feature \
-    "ghcr.io/devcontainers-contrib/features/homebrew-package:1.0.7" \
-    --option package='emacs'
-
 su - "$_REMOTE_USER" <<EOF
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/opt/emacs/bin
