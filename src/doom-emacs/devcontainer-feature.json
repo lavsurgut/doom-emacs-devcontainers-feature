@@ -16,6 +16,6 @@
       "type": "string"
     }
   },
-  "dependsOn": {"ghcr.io/devcontainers-contrib/features/homebrew-package:1": {},
-                "ghcr.io/devcontainers/features/git:1": {}}
+  "dependsOn": {"ghcr.io/devcontainers-contrib/features/homebrew-package:1": {"package": "emacs"},
+                "ghcr.io/devcontainers/features/github-cli:1": {}}
 }
